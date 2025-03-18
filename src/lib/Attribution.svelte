@@ -1,1 +1,1 @@
-<p>Images designed by Freepik</p>
+<p class="absolute bottom-0">Images designed by Freepik</p>
