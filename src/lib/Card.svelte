@@ -1,7 +1,9 @@
 <script>
-    let { number, selected = $bindable() } = $props();
+    let { number, locked, cooldown = $bindable(), selected = $bindable() } = $props();
 
     function onclick() {
+        if (locked || cooldown) return
+        console.log("Card clicked")
         selected = false
     }
 
