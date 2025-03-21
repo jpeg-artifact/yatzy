@@ -19,9 +19,11 @@
         card.selected = true;
         if (cardPile.shufflesLeft <= 0) card.locked = true;
     }
+
+    let offset = $state(("left-" + Math.round(Math.random() * 100)).toString())
 </script>
 
-<div class="flex flex-col gap-60">
+<div class="flex flex-col gap-140">
     <button {onclickcapture} class="flex flex-col">
         {#each cardPile.cards as card (card)}
             <Card
@@ -30,5 +32,5 @@
         {/each}
     </button>
 
-    <h1 class="text-center">Shuffels left: {cardPile.shufflesLeft}</h1>
+    <img class="w-32 drop-shadow-md relative {offset}" src="poker-chip.png" alt="chip">
 </div>

@@ -8,6 +8,6 @@
     }
 </script>
 
-<button {onclick} class="aspect-[287/400] w-40 -mb-60 transition-transform duration-300 transform shadow-md {card.selected ? "translate-y-96" : ""}">
+<button {onclick} class="aspect-[287/400] w-40 -mb-60 transition-transform duration-300 transform shadow-md {card.selected ? "translate-y-80" : ""}">
     <img class="w-[100%] h-[100%]" src="{card.selected ? card.getcardimg() : "card-back.png"}" alt={card.number}>
 </button>

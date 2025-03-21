@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import Attribution from "$lib/Attribution.svelte";
     import CardPile from "$lib/CardPile.svelte";
     import { CardPileClass } from "$lib/CardPileClass.svelte";
@@ -8,8 +8,7 @@
         new CardPileClass(),
         new CardPileClass(),
         new CardPileClass(),
-        new CardPileClass(),
-        new CardPileClass(),
+        new CardPileClass()
     ]);
 </script>
 
