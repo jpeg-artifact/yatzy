@@ -4,7 +4,7 @@
     let { chipPile } = $props();
 </script>
 
-<div>
+<div class="m-auto">
     {#each chipPile.chips as chip (chip)}
         <Chip {chip}></Chip>
     {/each}
