@@ -1,5 +1,6 @@
 <script lang="ts">
     import Card from "./Card.svelte";
+    import ChipPile from "./ChipPile.svelte";
 
     let { cardPile } = $props();
 
@@ -20,17 +21,15 @@
         if (cardPile.shufflesLeft <= 0) card.locked = true;
     }
 
-    let offset = $state(("left-" + Math.round(Math.random() * 100)).toString())
+    let offset = $state(("left-" + Math.round(Math.random() * 100)).toString());
 </script>
 
 <div class="flex flex-col gap-140">
     <button {onclickcapture} class="flex flex-col">
         {#each cardPile.cards as card (card)}
-            <Card
-                {card}
-            />
+            <Card {card} />
         {/each}
     </button>
 
-    <img class="w-32 drop-shadow-md relative {offset}" src="poker-chip.png" alt="chip">
+    <ChipPile chipPile={cardPile.chipPile}></ChipPile>
 </div>
