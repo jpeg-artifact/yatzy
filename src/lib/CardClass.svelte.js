@@ -23,8 +23,5 @@ export class CardClass {
         else if (this.number === 6) {
             return ["clubs-6.png", "hearts-6.png", "diamonds-6.png", "spades-6.png"][Math.floor(Math.random() * 4)]
         }
-        else {
-            return "card-back.png"
-        }
     }
 }

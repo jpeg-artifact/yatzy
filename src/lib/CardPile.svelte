@@ -12,8 +12,10 @@
             }
         }
         cardPile.shufflesLeft--;
+        cardPile.chipPile.chips[cardPile.shufflesLeft].visible = false;
         let index = Math.floor(Math.random() * 6);
         let card = cardPile.cards[index];
+        card.number = Math.floor(Math.random() * 6 + 1);
         console.log("Pile clicked");
         card.cooldown = true;
         setTimeout(() => (card.cooldown = false), 300);
