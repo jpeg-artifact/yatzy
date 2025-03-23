@@ -45,11 +45,6 @@
         homoRow(player.sixes, 6);
     }
 
-    function bonusclick() {
-        if (player.samesSum < 63) return;
-        player.bonus.value = 50;
-    }
-
     function onepairclick() {
         if (
             !player.isPlaying ||
@@ -247,8 +242,8 @@
     function yatzyclick() {
         if (
             !player.isPlaying ||
-            player.chans.value != 0 ||
-            player.chans.crossed
+            player.yatzy.value != 0 ||
+            player.yatzy.crossed
         )
             return;
 
@@ -393,16 +388,7 @@
             <tr>
                 <td> Bonus </td>
                 <td>
-                    <button
-                        class={player.isPlaying &&
-                        player.bonus.value == 0 &&
-                        player.samesSum >= 63
-                            ? "hover:bg-emerald-200"
-                            : ""}
-                        onclick={bonusclick}
-                    >
-                        {player.bonus.display}
-                    </button>
+                    {player.bonus}
                 </td>
                 <td>
                     <p class="text-xs">50 poäng</p>
@@ -541,8 +527,8 @@
                 <td>
                     <button
                         class={player.isPlaying &&
-                        player.chans.value == 0 &&
-                        !player.chans.crossed
+                        player.yatzy.value == 0 &&
+                        !player.yatzy.crossed
                             ? "hover:bg-emerald-200"
                             : ""}
                         onclick={yatzyclick}
