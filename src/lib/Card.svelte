@@ -1,8 +1,12 @@
 <script>
-    let { card } = $props()
+    let { card, cardPile } = $props()
 
     function onclick() {
         if (card.locked || card.cooldown) return
+        if (card.selected) {
+            cardPile.shuffle = true
+            setTimeout(() => (cardPile.shuffle = false), 400);
+        }
         card.selected = false
     }
 </script>

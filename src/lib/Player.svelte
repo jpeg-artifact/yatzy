@@ -89,7 +89,8 @@
             lastWasPair = 0;
         }
 
-        player.twoPair.value = pairs[0] * 2 + pairs[1] * 2;
+        if (pairs.length > 0)
+            player.twoPair.value = pairs[0] * 2 + pairs[1] * 2;
 
         if (player.twoPair.value === 0) player.twoPair.crossed = true;
         game.nextturn();
@@ -264,7 +265,7 @@
     }
 </script>
 
-<div class="bg-yellow-50 p-4 float-right shadow-md mt-8">
+<div class="bg-yellow-50 p-4 float-right transition-transform duration-1000 shadow-md mt-120 -mb-292 -ml-4 {player.isPlaying ? "-translate-y-112" : ""}">
     <table class="bg-yellow-50 border-4">
         <tbody>
             <tr class="border-4">

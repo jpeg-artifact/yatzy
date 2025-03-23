@@ -5,6 +5,8 @@ export class CardPileClass {
     shufflesLeft = $state(3);
     chipPile = new ChipPlieClass()
 
+    shuffle = $state(false)
+
     cards = [
         new CardClass(),
         new CardClass(),
@@ -32,6 +34,8 @@ export class CardPileClass {
         }
 
         this.shufflesLeft = 3
+        this.shuffle = true
+        setTimeout(() => (this.shuffle = false), 400);
         this.chipPile.resetchips()
     }
 }
