@@ -4,11 +4,13 @@
     function onclick() {
         if (card.locked || card.cooldown) return
         if (card.selected) {
+            cardPile.cooldown = true
             card.flipping = true
             setTimeout(() => (card.flipped = false), 150)
             setTimeout(() => (card.flipping = false), 300);
             setTimeout(() => (cardPile.shuffle = true), 600)
             setTimeout(() => (cardPile.shuffle = false), 1100);
+            setTimeout(() => (cardPile.cooldown = false), 1100);
         }
         setTimeout(() => (card.selected = false), 450)
     }

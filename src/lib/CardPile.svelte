@@ -5,7 +5,7 @@
     let { cardPile } = $props();
 
     function onclickcapture() {
-        if (cardPile.shufflesLeft <= 0) return;
+        if (cardPile.shufflesLeft <= 0 || cardPile.cooldown) return;
         for (let card of cardPile.cards) {
             if (card.selected) {
                 return;

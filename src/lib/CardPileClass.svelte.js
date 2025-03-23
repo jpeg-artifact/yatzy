@@ -6,6 +6,7 @@ export class CardPileClass {
     chipPile = new ChipPlieClass()
 
     shuffle = $state(false)
+    cooldown = $state(false)
 
     cards = [
         new CardClass(),
