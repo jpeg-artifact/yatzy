@@ -28,14 +28,19 @@ export class CardPileClass {
 
     resetcards() {
         for (let card of this.cards) {
-            card.selected = false
-            card.locked = false
-            card.cooldown = false
+            if (card.selected) {
+                card.locked = false
+                card.cooldown = false
+                card.flipping = true
+                setTimeout(() => (card.flipped = false), 150)
+                setTimeout(() => (card.flipping = false), 300);
+                setTimeout(() => (card.selected = false), 450);
+            }
         }
 
         this.shufflesLeft = 3
-        this.shuffle = true
-        setTimeout(() => (this.shuffle = false), 400);
+        setTimeout(() => (this.shuffle = true), 600)
+        setTimeout(() => (this.shuffle = false), 1100);
         this.chipPile.resetchips()
     }
 }

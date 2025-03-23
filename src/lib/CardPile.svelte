@@ -18,6 +18,10 @@
         card.number = Math.floor(Math.random() * 6 + 1);
         card.cooldown = true;
         setTimeout(() => (card.cooldown = false), 300);
+        setTimeout(() => (card.flipped = true), 300);
+        setTimeout(() => (card.flipping = true), 150);
+        setTimeout(() => (card.flipping = false), 450);
+
         card.selected = true;
         if (cardPile.shufflesLeft <= 0) card.locked = true;
     }

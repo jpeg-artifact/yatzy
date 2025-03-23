@@ -3,6 +3,8 @@ export class CardClass {
     locked = $state()
     cooldown = $state()
     selected = $state()
+    flipped = $state()
+    flipping = $state()
 
     getcardimg() {
         if (this.number === 1) {
