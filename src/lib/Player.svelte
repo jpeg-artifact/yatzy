@@ -34,7 +34,7 @@
     }
 
     function foursclick() {
-        homoRow(player.threes, 4)
+        homoRow(player.fours, 4)
     }
     
     function fivesclick() {
