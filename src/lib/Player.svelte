@@ -284,7 +284,7 @@
                         class={player.isPlaying &&
                         player.ones.value == 0 &&
                         !player.ones.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={onesclick}
                     >
@@ -300,7 +300,7 @@
                         class={player.isPlaying &&
                         player.twos.value == 0 &&
                         !player.twos.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={twosclick}
                     >
@@ -316,7 +316,7 @@
                         class={player.isPlaying &&
                         player.threes.value == 0 &&
                         !player.threes.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={threesclick}
                     >
@@ -332,7 +332,7 @@
                         class={player.isPlaying &&
                         player.fours.value == 0 &&
                         !player.fours.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={foursclick}
                     >
@@ -348,7 +348,7 @@
                         class={player.isPlaying &&
                         player.fives.value == 0 &&
                         !player.fives.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={fivesclick}
                     >
@@ -364,7 +364,7 @@
                         class={player.isPlaying &&
                         player.sixes.value == 0 &&
                         !player.sixes.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={sixesclick}
                     >
@@ -402,7 +402,7 @@
                         class={player.isPlaying &&
                         player.onePair.value == 0 &&
                         !player.onePair.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={onepairclick}
                     >
@@ -418,7 +418,7 @@
                         class={player.isPlaying &&
                         player.twoPair.value == 0 &&
                         !player.twoPair.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={twopairclick}
                     >
@@ -434,7 +434,7 @@
                         class={player.isPlaying &&
                         player.threeOfAKind.value == 0 &&
                         !player.threeOfAKind.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={threeofakindclick}
                     >
@@ -450,7 +450,7 @@
                         class={player.isPlaying &&
                         player.fourOfAKind.value == 0 &&
                         !player.fourOfAKind.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={fourofakindclick}
                     >
@@ -466,7 +466,7 @@
                         class={player.isPlaying &&
                         player.fullHouse.value == 0 &&
                         !player.fullHouse.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={fullhouseclick}
                     >
@@ -482,7 +482,7 @@
                         class={player.isPlaying &&
                         player.littleLadder.value == 0 &&
                         !player.littleLadder.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={littleladderclick}
                     >
@@ -498,7 +498,7 @@
                         class={player.isPlaying &&
                         player.bigLadder.value == 0 &&
                         !player.bigLadder.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={bigladderclick}
                     >
@@ -514,7 +514,7 @@
                         class={player.isPlaying &&
                         player.chans.value == 0 &&
                         !player.chans.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={chansclick}
                     >
@@ -530,7 +530,7 @@
                         class={player.isPlaying &&
                         player.yatzy.value == 0 &&
                         !player.yatzy.crossed
-                            ? "hover:bg-emerald-200"
+                            ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={yatzyclick}
                     >

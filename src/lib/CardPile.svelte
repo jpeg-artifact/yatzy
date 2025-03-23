@@ -28,10 +28,7 @@
 </script>
 
 <div class="flex flex-col gap-140">
-    <button
-        {onclickcapture}
-        class="flex flex-col transition-transform duration-400 {cardPile.shuffle ? '-translate-y-64' : ''}"
-    >
+    <button {onclickcapture} class="flex flex-col transition-transform duration-400 {cardPile.shuffle ? '-translate-y-64' : ''}">
         {#each cardPile.cards as card (card)}
             <Card {card} {cardPile} />
         {/each}
