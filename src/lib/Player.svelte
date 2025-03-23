@@ -55,7 +55,7 @@
 
         let numbers = game.getcardnumberarray()
 
-        for (let i = 5; i > 1; i--) {
+        for (let i = 4; i > 1; i--) {
             if (numbers[i] === numbers[i - 1]) {
                 if (numbers[i] === 0 || numbers[i - 1] === 0) break
                 player.onePair.value = numbers[i] * 2
@@ -71,14 +71,12 @@
         if (!player.isPlaying || player.twoPair.value != 0 || player.twoPair.crossed) return
 
         let numbers = game.getcardnumberarray()
-        console.log(numbers)
         let lastWasPair = 0
         let pairs = []
-        for (let i = 5; i > 0; i--) {
+        for (let i = 4; i > 0; i--) {
             if (numbers[i - lastWasPair] === numbers[i - 1 - lastWasPair]) {
                 if (numbers[i - lastWasPair] === 0) break
                 pairs.push(numbers[i - lastWasPair])
-                console.log("Pair = " + numbers[i - lastWasPair])
                 lastWasPair = 1
                 continue
             }
@@ -86,7 +84,6 @@
             lastWasPair = 0
         }
 
-        console.log(pairs, pairs[0], pairs[1])
         player.twoPair.value = pairs[0] * 2 + pairs[1] * 2
 
         if (player.twoPair.value === 0) player.twoPair.crossed = true
@@ -98,7 +95,7 @@
 
         let numbers = game.getcardnumberarray()
 
-        for (let i = 5; i > 1; i--) {
+        for (let i = 4; i > 1; i--) {
             if (numbers[i] === numbers[i - 1] && numbers[i] === numbers[i - 2]) {
                 if (numbers[i] === 0) break
                 player.threeOfAKind.value = numbers[i] * 3
@@ -115,7 +112,7 @@
 
         let numbers = game.getcardnumberarray()
 
-        for (let i = 5; i > 1; i--) {
+        for (let i = 4; i > 1; i--) {
             if (numbers[i] === numbers[i - 1] && numbers[i] === numbers[i - 2] && numbers[i] === numbers[i - 3]) {
                 if (numbers[i] === 0) break
                 player.fourOfAKind.value = numbers[i] * 4
@@ -124,6 +121,25 @@
         }
 
         if (player.fourOfAKind.value === 0) player.fourOfAKind.crossed = true
+        game.nextturn()
+    }
+
+    function fullhouseclick() {
+        if (!player.isPlaying || player.fullHouse.value != 0 || player.fullHouse.crossed) return
+
+        let numbers = game.getcardnumberarray()
+
+        for (let number of numbers) {
+            if (number === 0) return
+        }
+
+        if ((numbers[4] === numbers[3] && numbers[2] === numbers[1] && numbers[2] === numbers[0]) || (numbers[4] === numbers[3] && numbers[4] === numbers[2] && numbers[1] === numbers[0])) {
+            for (let number of numbers) {
+                player.fullHouse.value += number
+            }
+        }
+
+        if (player.fullHouse.value === 0) player.fullHouse.crossed = true
         game.nextturn()
     }
 </script>
@@ -300,7 +316,9 @@
                     Kåk
                 </td>
                 <td>
-                    {player.fullHouse.display}
+                    <button class="{player.isPlaying && player.fullHouse.value == 0 && !player.fullHouse.crossed ? "hover:bg-emerald-200" : ""}" onclick={fullhouseclick}>
+                        {player.fullHouse.display}
+                    </button>
                 </td>
                 <td></td>
             </tr>
