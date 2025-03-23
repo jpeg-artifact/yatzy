@@ -1,0 +1,41 @@
+import { PlayerClass } from "$lib/PlayerClass.svelte";
+import { CardPileClass } from "$lib/CardPileClass.svelte";
+
+export class GameClass {
+    cardPiles = $state([
+        new CardPileClass(),
+        new CardPileClass(),
+        new CardPileClass(),
+        new CardPileClass(),
+        new CardPileClass()
+    ]);
+
+    players = $state([
+        new PlayerClass(),
+        new PlayerClass()
+        ])
+
+    turn = $state(0)
+
+    nextturn() {
+        this.players[this.turn % this.players.length].isPlaying = false
+        this.turn++
+        this.players[this.turn % this.players.length].isPlaying = true
+
+        for (let cardPile of this.cardPiles) {
+            cardPile.resetcards()
+        }
+    }
+
+    getcardnumberarray() {
+        let numberArray = []
+
+        for (let cardPile of this.cardPiles) {
+            numberArray.push(cardPile.getselectedcardvalue())
+        }
+
+        return numberArray.sort()
+    }
+}
+
+export const game = new GameClass()

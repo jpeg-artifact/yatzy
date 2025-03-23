@@ -6,4 +6,10 @@ export class ChipPlieClass {
         new ChipClass(),
         new ChipClass()
     ]
+
+    resetchips() {
+        for (let chip of this.chips) {
+            chip.visible = true
+        }
+    }
 }

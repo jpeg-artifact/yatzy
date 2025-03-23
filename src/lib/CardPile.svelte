@@ -22,8 +22,6 @@
         card.selected = true;
         if (cardPile.shufflesLeft <= 0) card.locked = true;
     }
-
-    let offset = $state(("left-" + Math.round(Math.random() * 100)).toString());
 </script>
 
 <div class="flex flex-col gap-140">

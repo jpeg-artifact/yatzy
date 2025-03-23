@@ -13,4 +13,25 @@ export class CardPileClass {
         new CardClass(),
         new CardClass(),
     ]
+
+    getselectedcardvalue() {
+        for (let card of this.cards) {
+            if (card.selected) {
+                return card.number
+            }
+        }
+
+        return 0
+    }
+
+    resetcards() {
+        for (let card of this.cards) {
+            card.selected = false
+            card.locked = false
+            card.cooldown = false
+        }
+
+        this.shufflesLeft = 3
+        this.chipPile.resetchips()
+    }
 }

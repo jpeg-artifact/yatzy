@@ -1,3 +1,21 @@
+<script>
+    import { game } from "./GameClass.svelte";
+
+    let { player } = $props()
+    
+    function onesclick() {
+        if (!player.isPlaying) return
+
+        for (let number of game.getcardnumberarray()) {
+            if (number === 1) {
+                player.ones += 1
+            }
+        }
+
+        game.nextturn()
+    }
+</script>
+
 <style>
     td {
         border-style: var(--tw-border-style);
@@ -20,7 +38,7 @@
                     <h1 class="text-1xl">SPELARE</h1> 
                 </td>
                 <td>
-                    
+                    <input type="text">
                 </td>
                 <td></td>
             </tr>
@@ -29,7 +47,9 @@
                     Ettor 
                 </td>
                 <td>
-                    
+                    <button class="w-[100%] h-[100%] {player.isPlaying ? "hover:bg-emerald-200" : ""}" onclick={onesclick}>
+                        {player.ones}
+                    </button>
                 </td>
                 <td></td>
             </tr>
@@ -38,7 +58,7 @@
                     Tvåor
                 </td>
                 <td>
-                    
+                    {player.twos}
                 </td>
                 <td></td>
             </tr>
@@ -47,7 +67,7 @@
                     Treor
                 </td>
                 <td>
-                    
+                    {player.threes}
                 </td>
                 <td></td>
             </tr>
@@ -56,7 +76,7 @@
                     Fyror
                 </td>
                 <td>
-                    
+                    {player.fours}
                 </td>
                 <td></td>
             </tr>
@@ -65,7 +85,7 @@
                     Femmor
                 </td>
                 <td>
-                    
+                    {player.fives}
                 </td>
                 <td></td>
             </tr>
@@ -74,7 +94,7 @@
                     Sexor
                 </td>
                 <td>
-                    
+                    {player.sixes}
                 </td>
                 <td></td>
             </tr>
@@ -85,7 +105,7 @@
                     <h1 class="text-1xl">SUMMA</h1> 
                 </td>
                 <td>
-
+                    {player.samesSum}
                 </td>
                 <td>
                     <p class="text-xs">63 eller mer = bonus</p>
@@ -96,7 +116,7 @@
                     Bonus 
                 </td>
                 <td>
-                    
+                    {player.bonus}
                 </td>
                 <td>
                     <p class="text-xs">50 poäng</p>
@@ -107,7 +127,7 @@
                     Ett par
                 </td>
                 <td>
-                    
+                    {player.onePair}
                 </td>
                 <td></td>
             </tr>
@@ -116,7 +136,7 @@
                     Två par
                 </td>
                 <td>
-                    
+                    {player.twoPair}
                 </td>
                 <td></td>
             </tr>
@@ -125,7 +145,7 @@
                     Tretal
                 </td>
                 <td>
-                    
+                    {player.threeOfAKind}
                 </td>
                 <td></td>
             </tr>
@@ -134,7 +154,7 @@
                     Fyrtal
                 </td>
                 <td>
-                    
+                    {player.fourOfAKind}
                 </td>
                 <td></td>
             </tr>
@@ -143,7 +163,7 @@
                     Kåk
                 </td>
                 <td>
-                    
+                    {player.fullHouse}
                 </td>
                 <td></td>
             </tr>
@@ -152,7 +172,7 @@
                     Liten stege
                 </td>
                 <td>
-                    
+                    {player.littleLadder}
                 </td>
                 <td></td>
             </tr>
@@ -161,7 +181,7 @@
                     Stor stege
                 </td>
                 <td>
-                    
+                    {player.bigLadder}
                 </td>
                 <td></td>
             </tr>
@@ -170,7 +190,7 @@
                     Chans
                 </td>
                 <td>
-                    
+                    {player.chans}
                 </td>
                 <td></td>
             </tr>
@@ -179,7 +199,7 @@
                     Yatzy
                 </td>
                 <td>
-                    
+                    {player.yatzy}
                 </td>
                 <td>
                     <p class="text-xs">50 poäng</p>
@@ -190,7 +210,7 @@
                     <h1 class="text-1xl">SUMMA</h1> 
                 </td>
                 <td>
-                    
+                    {player.totalSum}
                 </td>
                 <td></td>
             </tr>
