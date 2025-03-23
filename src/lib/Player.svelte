@@ -56,13 +56,75 @@
         let numbers = game.getcardnumberarray()
 
         for (let i = 5; i > 1; i--) {
-            console.log(i, numbers[i], numbers[i - 1])
-            if (numbers[i] == numbers[i - 1]) {
+            if (numbers[i] === numbers[i - 1]) {
+                if (numbers[i] === 0 || numbers[i - 1] === 0) break
                 player.onePair.value = numbers[i] * 2
-
                 break
             }
         }
+
+        if (player.onePair.value === 0) player.onePair.crossed = true
+        game.nextturn()
+    }
+
+    function twopairclick() {
+        if (!player.isPlaying || player.twoPair.value != 0 || player.twoPair.crossed) return
+
+        let numbers = game.getcardnumberarray()
+        console.log(numbers)
+        let lastWasPair = 0
+        let pairs = []
+        for (let i = 5; i > 0; i--) {
+            if (numbers[i - lastWasPair] === numbers[i - 1 - lastWasPair]) {
+                if (numbers[i - lastWasPair] === 0) break
+                pairs.push(numbers[i - lastWasPair])
+                console.log("Pair = " + numbers[i - lastWasPair])
+                lastWasPair = 1
+                continue
+            }
+
+            lastWasPair = 0
+        }
+
+        console.log(pairs, pairs[0], pairs[1])
+        player.twoPair.value = pairs[0] * 2 + pairs[1] * 2
+
+        if (player.twoPair.value === 0) player.twoPair.crossed = true
+        game.nextturn()
+    }
+
+    function threeofakindclick() {
+        if (!player.isPlaying || player.threeOfAKind.value != 0 || player.threeOfAKind.crossed) return
+
+        let numbers = game.getcardnumberarray()
+
+        for (let i = 5; i > 1; i--) {
+            if (numbers[i] === numbers[i - 1] && numbers[i] === numbers[i - 2]) {
+                if (numbers[i] === 0) break
+                player.threeOfAKind.value = numbers[i] * 3
+                break
+            }
+        }
+
+        if (player.threeOfAKind.value === 0) player.threeOfAKind.crossed = true
+        game.nextturn()
+    }
+
+    function fourofakindclick() {
+        if (!player.isPlaying || player.fourOfAKind.value != 0 || player.fourOfAKind.crossed) return
+
+        let numbers = game.getcardnumberarray()
+
+        for (let i = 5; i > 1; i--) {
+            if (numbers[i] === numbers[i - 1] && numbers[i] === numbers[i - 2] && numbers[i] === numbers[i - 3]) {
+                if (numbers[i] === 0) break
+                player.fourOfAKind.value = numbers[i] * 4
+                break
+            }
+        }
+
+        if (player.fourOfAKind.value === 0) player.fourOfAKind.crossed = true
+        game.nextturn()
     }
 </script>
 
@@ -205,7 +267,9 @@
                     Två par
                 </td>
                 <td>
-                    {player.twoPair.display}
+                    <button class="{player.isPlaying && player.twoPair.value == 0 && !player.twoPair.crossed ? "hover:bg-emerald-200" : ""}" onclick={twopairclick}>
+                        {player.twoPair.display}
+                    </button>
                 </td>
                 <td></td>
             </tr>
@@ -214,7 +278,9 @@
                     Tretal
                 </td>
                 <td>
-                    {player.threeOfAKind.display}
+                    <button class="{player.isPlaying && player.threeOfAKind.value == 0 && !player.threeOfAKind.crossed ? "hover:bg-emerald-200" : ""}" onclick={threeofakindclick}>
+                        {player.threeOfAKind.display}
+                    </button>
                 </td>
                 <td></td>
             </tr>
@@ -223,7 +289,9 @@
                     Fyrtal
                 </td>
                 <td>
-                    {player.fourOfAKind.display}
+                    <button class="{player.isPlaying && player.fourOfAKind.value == 0 && !player.fourOfAKind.crossed ? "hover:bg-emerald-200" : ""}" onclick={fourofakindclick}>
+                        {player.fourOfAKind.display}
+                    </button>
                 </td>
                 <td></td>
             </tr>
