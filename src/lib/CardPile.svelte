@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import Card from "./Card.svelte";
     import ChipPile from "./ChipPile.svelte";
 

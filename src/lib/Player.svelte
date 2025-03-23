@@ -1,18 +1,53 @@
-<script>
+<script lang="ts">
     import { game } from "./GameClass.svelte";
+    import { RowClass } from "./RowClass.svelte";
 
     let { player } = $props()
     
-    function onesclick() {
-        if (!player.isPlaying) return
+    function homoRow(type : RowClass, addNumber : number) {
+        if (!player.isPlaying || type.value != 0 || type.crossed) return
+
+        let valid = false
 
         for (let number of game.getcardnumberarray()) {
-            if (number === 1) {
-                player.ones += 1
+            if (number === addNumber) {
+                type.value += addNumber
+                valid = true
             }
         }
+        
+        if (!valid) type.crossed = true
 
         game.nextturn()
+    }
+
+    function onesclick() {
+        homoRow(player.ones, 1)
+    }
+
+    function twosclick() {
+        homoRow(player.twos, 2)
+    }
+
+    function threesclick() {
+        homoRow(player.threes, 3)
+    }
+
+    function foursclick() {
+        homoRow(player.threes, 4)
+    }
+    
+    function fivesclick() {
+        homoRow(player.fives, 5)
+    }
+
+    function sixesclick() {
+        homoRow(player.sixes, 6)
+    }
+
+    function bonusclick() {
+        if (player.samesSum < 63) return
+            player.bonus.value = 50
     }
 </script>
 
@@ -27,6 +62,11 @@
     }
     h1 {
         font-weight: bold;
+    }
+    button {
+        width: 100%;
+        height: 100%;
+        text-align: left;
     }
 </style>
 
@@ -47,8 +87,8 @@
                     Ettor 
                 </td>
                 <td>
-                    <button class="w-[100%] h-[100%] {player.isPlaying ? "hover:bg-emerald-200" : ""}" onclick={onesclick}>
-                        {player.ones}
+                    <button class="{player.isPlaying && player.ones.value == 0 && !player.ones.crossed ? "hover:bg-emerald-200" : ""}" onclick={onesclick}>
+                        {player.ones.display}
                     </button>
                 </td>
                 <td></td>
@@ -58,7 +98,9 @@
                     Tvåor
                 </td>
                 <td>
-                    {player.twos}
+                    <button class="{player.isPlaying && player.twos.value == 0 && !player.twos.crossed ? "hover:bg-emerald-200" : ""}" onclick={twosclick}>
+                        {player.twos.display}
+                    </button>
                 </td>
                 <td></td>
             </tr>
@@ -67,7 +109,9 @@
                     Treor
                 </td>
                 <td>
-                    {player.threes}
+                    <button class="{player.isPlaying && player.threes.value == 0 && !player.threes.crossed ? "hover:bg-emerald-200" : ""}" onclick={threesclick}>
+                        {player.threes.display}
+                    </button>
                 </td>
                 <td></td>
             </tr>
@@ -76,7 +120,9 @@
                     Fyror
                 </td>
                 <td>
-                    {player.fours}
+                    <button class="{player.isPlaying && player.fours.value == 0 && !player.fours.crossed ? "hover:bg-emerald-200" : ""}" onclick={foursclick}>
+                        {player.fours.display}
+                    </button>
                 </td>
                 <td></td>
             </tr>
@@ -85,7 +131,9 @@
                     Femmor
                 </td>
                 <td>
-                    {player.fives}
+                    <button class="{player.isPlaying && player.fives.value == 0 && !player.fives.crossed ? "hover:bg-emerald-200" : ""}" onclick={fivesclick}>
+                        {player.fives.display}
+                    </button>
                 </td>
                 <td></td>
             </tr>
@@ -94,7 +142,9 @@
                     Sexor
                 </td>
                 <td>
-                    {player.sixes}
+                    <button class="{player.isPlaying && player.sixes.value == 0 && !player.sixes.crossed ? "hover:bg-emerald-200" : ""}" onclick={sixesclick}>
+                        {player.sixes.display}
+                    </button>
                 </td>
                 <td></td>
             </tr>
@@ -116,7 +166,9 @@
                     Bonus 
                 </td>
                 <td>
-                    {player.bonus}
+                    <button class="{player.isPlaying && player.bonus.value == 0 && player.samesSum >= 63 ? "hover:bg-emerald-200" : ""}" onclick={bonusclick}>
+                        {player.bonus.display}
+                    </button>
                 </td>
                 <td>
                     <p class="text-xs">50 poäng</p>
@@ -127,7 +179,7 @@
                     Ett par
                 </td>
                 <td>
-                    {player.onePair}
+                    {player.onePair.display}
                 </td>
                 <td></td>
             </tr>
@@ -136,7 +188,7 @@
                     Två par
                 </td>
                 <td>
-                    {player.twoPair}
+                    {player.twoPair.display}
                 </td>
                 <td></td>
             </tr>
@@ -145,7 +197,7 @@
                     Tretal
                 </td>
                 <td>
-                    {player.threeOfAKind}
+                    {player.threeOfAKind.display}
                 </td>
                 <td></td>
             </tr>
@@ -154,7 +206,7 @@
                     Fyrtal
                 </td>
                 <td>
-                    {player.fourOfAKind}
+                    {player.fourOfAKind.display}
                 </td>
                 <td></td>
             </tr>
@@ -163,7 +215,7 @@
                     Kåk
                 </td>
                 <td>
-                    {player.fullHouse}
+                    {player.fullHouse.display}
                 </td>
                 <td></td>
             </tr>
@@ -172,7 +224,7 @@
                     Liten stege
                 </td>
                 <td>
-                    {player.littleLadder}
+                    {player.littleLadder.display}
                 </td>
                 <td></td>
             </tr>
@@ -181,7 +233,7 @@
                     Stor stege
                 </td>
                 <td>
-                    {player.bigLadder}
+                    {player.bigLadder.display}
                 </td>
                 <td></td>
             </tr>
@@ -190,7 +242,7 @@
                     Chans
                 </td>
                 <td>
-                    {player.chans}
+                    {player.chans.display}
                 </td>
                 <td></td>
             </tr>
@@ -199,7 +251,7 @@
                     Yatzy
                 </td>
                 <td>
-                    {player.yatzy}
+                    {player.yatzy.display}
                 </td>
                 <td>
                     <p class="text-xs">50 poäng</p>
