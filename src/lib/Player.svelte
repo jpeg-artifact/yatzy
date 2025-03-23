@@ -255,10 +255,11 @@
         let numbers = game.getcardnumberarray();
 
         if (
-            numbers[4] == numbers[3] &&
-            numbers[4] == numbers[2] &&
-            numbers[4] == numbers[1] &&
-            numbers[4] == numbers[0]
+            numbers[4] != 0 &&
+            numbers[4] === numbers[3] &&
+            numbers[4] === numbers[2] &&
+            numbers[4] === numbers[1] &&
+            numbers[4] === numbers[0]
         ) {
             player.yatzy.value = 50
         }
