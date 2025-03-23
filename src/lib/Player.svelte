@@ -49,6 +49,21 @@
         if (player.samesSum < 63) return
             player.bonus.value = 50
     }
+
+    function onepairclick() {
+        if (!player.isPlaying || player.onePair.value != 0 || player.onePair.crossed) return
+
+        let numbers = game.getcardnumberarray()
+
+        for (let i = 5; i > 1; i--) {
+            console.log(i, numbers[i], numbers[i - 1])
+            if (numbers[i] == numbers[i - 1]) {
+                player.onePair.value = numbers[i] * 2
+
+                break
+            }
+        }
+    }
 </script>
 
 <style>
@@ -179,7 +194,9 @@
                     Ett par
                 </td>
                 <td>
-                    {player.onePair.display}
+                    <button class="{player.isPlaying && player.onePair.value == 0 && !player.onePair.crossed ? "hover:bg-emerald-200" : ""}" onclick={onepairclick}>
+                        {player.onePair.display}
+                    </button>
                 </td>
                 <td></td>
             </tr>

@@ -3,7 +3,6 @@
 
     function onclick() {
         if (card.locked || card.cooldown) return
-        console.log("Card clicked")
         card.selected = false
     }
 </script>
