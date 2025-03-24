@@ -12,7 +12,7 @@
     }
 
     function homoRow(type: RowClass, addNumber: number) {
-        if (!player.isPlaying || type.value != 0 || type.crossed) return;
+        if (!player.isPlaying || type.value != 0 || type.crossed || game.switchingPlayer) return;
 
         let valid = false;
 
@@ -56,7 +56,8 @@
         if (
             !player.isPlaying ||
             player.onePair.value != 0 ||
-            player.onePair.crossed
+            player.onePair.crossed || 
+            game.switchingPlayer
         )
             return;
 
@@ -78,7 +79,8 @@
         if (
             !player.isPlaying ||
             player.twoPair.value != 0 ||
-            player.twoPair.crossed
+            player.twoPair.crossed || 
+            game.switchingPlayer
         )
             return;
 
@@ -107,7 +109,8 @@
         if (
             !player.isPlaying ||
             player.threeOfAKind.value != 0 ||
-            player.threeOfAKind.crossed
+            player.threeOfAKind.crossed || 
+            game.switchingPlayer
         )
             return;
 
@@ -132,7 +135,8 @@
         if (
             !player.isPlaying ||
             player.fourOfAKind.value != 0 ||
-            player.fourOfAKind.crossed
+            player.fourOfAKind.crossed || 
+            game.switchingPlayer
         )
             return;
 
@@ -158,7 +162,8 @@
         if (
             !player.isPlaying ||
             player.fullHouse.value != 0 ||
-            player.fullHouse.crossed
+            player.fullHouse.crossed || 
+            game.switchingPlayer
         )
             return;
 
@@ -185,7 +190,8 @@
         if (
             !player.isPlaying ||
             player.littleLadder.value != 0 ||
-            player.littleLadder.crossed
+            player.littleLadder.crossed || 
+            game.switchingPlayer
         )
             return;
 
@@ -209,7 +215,8 @@
         if (
             !player.isPlaying ||
             player.bigLadder.value != 0 ||
-            player.bigLadder.crossed
+            player.bigLadder.crossed || 
+            game.switchingPlayer
         )
             return;
 
@@ -233,7 +240,8 @@
         if (
             !player.isPlaying ||
             player.chans.value != 0 ||
-            player.chans.crossed
+            player.chans.crossed || 
+            game.switchingPlayer
         )
             return;
 
@@ -251,7 +259,8 @@
         if (
             !player.isPlaying ||
             player.yatzy.value != 0 ||
-            player.yatzy.crossed
+            player.yatzy.crossed || 
+            game.switchingPlayer
         )
             return;
 
@@ -272,7 +281,7 @@
     }
 </script>
 
-<div style="rotate: {rotation}deg; z-index: {player.isPlaying ? "1" : "0"};" class="bg-yellow-50 p-4 float-right transition-transform duration-1000 shadow-md mt-120 -mb-292 -ml-4 {player.isPlaying ? "-translate-y-112" : ""}">
+<div style="rotate: {rotation}deg; z-index: {player.isPlaying ? "1" : "0"};" class="bg-yellow-50 p-4 transition-transform duration-1000 shadow-md mt-120 -mb-292 {player.isPlaying ? "-translate-y-112" : ""}">
     <table class="bg-yellow-50 border-4">
         <tbody>
             <tr class="border-4">
@@ -565,10 +574,10 @@
     td {
         border-style: var(--tw-border-style);
         border-width: 2px;
-        padding: 4px;
-        padding-left: 8px;
-        padding-right: 32px;
-        min-width: 128px;
+        padding: 1%;
+        padding-left: 1%;
+        padding-right: 10%;
+        width: 33%;
     }
     h1 {
         font-weight: bold;

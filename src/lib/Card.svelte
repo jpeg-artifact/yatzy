@@ -38,7 +38,7 @@
     }
 </style>
 
-<button {onclick} style="rotate: {rotation}deg;" class="card {card.flipped ? "flipped" : ""} {card.flipping ? "scale-110" : ""} aspect-[287/400] h-56 -mb-60 transition-transform duration-300 shadow-md {card.locked || (!card.selected && cardPile.getselectedcardvalue()) != 0 ? "" : "cursor-pointer"} {card.selected ? "translate-y-80" : ""}">
-    <img class="back transition-transform duration-300 w-[100%] h-[100%] -mb-56" src="card-back.png" alt={card.number}>
-    <img class="front transition-transform duration-300 w-[100%] h-[100%]" src="{card.getcardimg()}" alt={card.number}>
+<button {onclick} style="rotate: {rotation}deg;" class="card {card.flipped ? "flipped" : ""} {card.flipping ? "scale-110" : ""} aspect-[287/400] w-[100%] -mb-[150%] transition-transform duration-300 shadow-md {card.locked || (!card.selected && cardPile.getselectedcardvalue()) != 0 ? "" : "cursor-pointer"} {card.selected ? "translate-y-54" : "-translate-y-24"}">
+    <img class="back transition-transform absolute  duration-300 aspect-[287/400] w-[100%] " src="card-back.png" alt={card.number}>
+    <img class="front transition-transform absolute  duration-300 aspect-[287/400] w-[100%]" src="{card.getcardimg()}" alt={card.number}>
 </button>
