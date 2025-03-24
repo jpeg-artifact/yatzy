@@ -7,7 +7,7 @@
     game.nextturn();
 </script>
 
-<div class="flex justify-center">
+<div class="flex justify-center {game.switchingPlayer ? "cursor-progress" : ""}">
     <div class="flex gap-16">
         <div class="flex gap-8 ml-8">
             {#each game.cardPiles as cardPile (cardPile)}

@@ -16,8 +16,10 @@ export class GameClass {
         ])
 
     turn = $state(0)
+    switchingPlayer = $state(false)
 
     nextturn() {
+        this.switchingPlayer = true
         this.players[this.turn % this.players.length].isPlaying = false
         this.turn++
         this.players[this.turn % this.players.length].isPlaying = true
@@ -25,6 +27,8 @@ export class GameClass {
         for (let cardPile of this.cardPiles) {
             cardPile.resetcards()
         }
+
+        setTimeout(() => (this.switchingPlayer = false), 1500);
     }
 
     getcardnumberarray() {
