@@ -16,6 +16,13 @@ export class GameClass {
         ])
 
     turn = $state(0)
+    gameOver = $derived.by(() => {
+        if (this.turn > 15 * this.players.length + 1) {
+            return true
+        } else {
+            return false
+        }
+    })
     switchingPlayer = $state(false)
 
     nextturn() {
@@ -29,6 +36,11 @@ export class GameClass {
         }
 
         setTimeout(() => (this.switchingPlayer = false), 1500);
+    }
+
+    resetgame() {
+        this.turn = 0
+        this.nextturn()
     }
 
     getcardnumberarray() {

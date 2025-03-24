@@ -281,7 +281,7 @@
     }
 </script>
 
-<div style="rotate: {rotation}deg; z-index: {player.isPlaying ? "1" : "0"};" class="bg-yellow-50 p-4 transition-transform duration-1000 shadow-md mt-116 -mb-292 {player.isPlaying ? "-translate-y-112" : ""}">
+<div style="rotate: {rotation}deg; z-index: {player.isPlaying ? "1" : "0"};" class="bg-yellow-50 p-4 transition-transform duration-1000 shadow-md {game.gameOver ? "" : "mt-116 -mb-292"} {player.isPlaying && !game.gameOver ? "-translate-y-112" : ""}">
     <table class="bg-yellow-50 border-4">
         <tbody>
             <tr class="border-4">
@@ -299,7 +299,8 @@
                     <button
                         class={player.isPlaying &&
                         player.ones.value == 0 &&
-                        !player.ones.crossed
+                        !player.ones.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={onesclick}
@@ -315,7 +316,8 @@
                     <button
                         class={player.isPlaying &&
                         player.twos.value == 0 &&
-                        !player.twos.crossed
+                        !player.twos.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={twosclick}
@@ -331,7 +333,8 @@
                     <button
                         class={player.isPlaying &&
                         player.threes.value == 0 &&
-                        !player.threes.crossed
+                        !player.threes.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={threesclick}
@@ -347,7 +350,8 @@
                     <button
                         class={player.isPlaying &&
                         player.fours.value == 0 &&
-                        !player.fours.crossed
+                        !player.fours.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={foursclick}
@@ -363,7 +367,8 @@
                     <button
                         class={player.isPlaying &&
                         player.fives.value == 0 &&
-                        !player.fives.crossed
+                        !player.fives.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={fivesclick}
@@ -379,7 +384,8 @@
                     <button
                         class={player.isPlaying &&
                         player.sixes.value == 0 &&
-                        !player.sixes.crossed
+                        !player.sixes.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={sixesclick}
@@ -417,7 +423,8 @@
                     <button
                         class={player.isPlaying &&
                         player.onePair.value == 0 &&
-                        !player.onePair.crossed
+                        !player.onePair.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={onepairclick}
@@ -433,7 +440,8 @@
                     <button
                         class={player.isPlaying &&
                         player.twoPair.value == 0 &&
-                        !player.twoPair.crossed
+                        !player.twoPair.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={twopairclick}
@@ -449,7 +457,8 @@
                     <button
                         class={player.isPlaying &&
                         player.threeOfAKind.value == 0 &&
-                        !player.threeOfAKind.crossed
+                        !player.threeOfAKind.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={threeofakindclick}
@@ -465,7 +474,8 @@
                     <button
                         class={player.isPlaying &&
                         player.fourOfAKind.value == 0 &&
-                        !player.fourOfAKind.crossed
+                        !player.fourOfAKind.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={fourofakindclick}
@@ -481,7 +491,8 @@
                     <button
                         class={player.isPlaying &&
                         player.fullHouse.value == 0 &&
-                        !player.fullHouse.crossed
+                        !player.fullHouse.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={fullhouseclick}
@@ -497,7 +508,8 @@
                     <button
                         class={player.isPlaying &&
                         player.littleLadder.value == 0 &&
-                        !player.littleLadder.crossed
+                        !player.littleLadder.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={littleladderclick}
@@ -513,7 +525,8 @@
                     <button
                         class={player.isPlaying &&
                         player.bigLadder.value == 0 &&
-                        !player.bigLadder.crossed
+                        !player.bigLadder.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={bigladderclick}
@@ -529,7 +542,8 @@
                     <button
                         class={player.isPlaying &&
                         player.chans.value == 0 &&
-                        !player.chans.crossed
+                        !player.chans.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={chansclick}
@@ -545,7 +559,8 @@
                     <button
                         class={player.isPlaying &&
                         player.yatzy.value == 0 &&
-                        !player.yatzy.crossed
+                        !player.yatzy.crossed &&
+                        !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
                             : ""}
                         onclick={yatzyclick}
