@@ -281,7 +281,7 @@
     }
 </script>
 
-<div style="rotate: {rotation}deg; z-index: {player.isPlaying ? "1" : "0"};" class="bg-yellow-50 p-4 transition-transform duration-1000 shadow-md mt-120 -mb-292 {player.isPlaying ? "-translate-y-112" : ""}">
+<div style="rotate: {rotation}deg; z-index: {player.isPlaying ? "1" : "0"};" class="bg-yellow-50 p-4 transition-transform duration-1000 shadow-md mt-116 -mb-292 {player.isPlaying ? "-translate-y-112" : ""}">
     <table class="bg-yellow-50 border-4">
         <tbody>
             <tr class="border-4">
