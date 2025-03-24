@@ -570,5 +570,7 @@
         width: 100%;
         height: 100%;
         text-align: left;
+        border-radius: 4px;
+        padding-left: 4px;
     }
 </style>
