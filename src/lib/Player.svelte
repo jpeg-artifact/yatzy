@@ -396,7 +396,7 @@
                 <td></td>
             </tr>
         </tbody>
-        <tbody>
+        <tbody class="w-[66%]">
             <tr class="border-4">
                 <td>
                     <h1 class="text-1xl">SUMMA</h1>
@@ -592,7 +592,6 @@
         padding: 1%;
         padding-left: 1%;
         padding-right: 10%;
-        width: 33%;
     }
     h1 {
         font-weight: bold;
