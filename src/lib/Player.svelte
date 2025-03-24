@@ -4,6 +4,13 @@
 
     let { player } = $props();
 
+    let rotation = $state(Math.random() * 2)
+
+    function proceed() {
+        rotation = Math.random() * 2 - 1
+        game.nextturn()
+    }
+
     function homoRow(type: RowClass, addNumber: number) {
         if (!player.isPlaying || type.value != 0 || type.crossed) return;
 
@@ -18,7 +25,7 @@
 
         if (!valid) type.crossed = true;
 
-        game.nextturn();
+        proceed();
     }
 
     function onesclick() {
@@ -64,7 +71,7 @@
         }
 
         if (player.onePair.value === 0) player.onePair.crossed = true;
-        game.nextturn();
+        proceed();
     }
 
     function twopairclick() {
@@ -93,7 +100,7 @@
             player.twoPair.value = pairs[0] * 2 + pairs[1] * 2;
 
         if (player.twoPair.value === 0) player.twoPair.crossed = true;
-        game.nextturn();
+        proceed();
     }
 
     function threeofakindclick() {
@@ -118,7 +125,7 @@
         }
 
         if (player.threeOfAKind.value === 0) player.threeOfAKind.crossed = true;
-        game.nextturn();
+        proceed();
     }
 
     function fourofakindclick() {
@@ -144,7 +151,7 @@
         }
 
         if (player.fourOfAKind.value === 0) player.fourOfAKind.crossed = true;
-        game.nextturn();
+        proceed();
     }
 
     function fullhouseclick() {
@@ -171,7 +178,7 @@
         }
 
         if (player.fullHouse.value === 0) player.fullHouse.crossed = true;
-        game.nextturn();
+        proceed();
     }
 
     function littleladderclick() {
@@ -195,7 +202,7 @@
         }
 
         if (player.littleLadder.value === 0) player.littleLadder.crossed = true;
-        game.nextturn();
+        proceed();
     }
 
     function bigladderclick() {
@@ -219,7 +226,7 @@
         }
 
         if (player.bigLadder.value === 0) player.bigLadder.crossed = true;
-        game.nextturn();
+        proceed();
     }
 
     function chansclick() {
@@ -237,7 +244,7 @@
         }
 
         if (player.chans.value === 0) player.chans.crossed = true;
-        game.nextturn();
+        proceed();
     }
 
     function yatzyclick() {
@@ -261,11 +268,11 @@
         }
 
         if (player.yatzy.value === 0) player.yatzy.crossed = true;
-        game.nextturn();
+        proceed();
     }
 </script>
 
-<div class="bg-yellow-50 p-4 float-right transition-transform duration-1000 shadow-md mt-120 -mb-292 -ml-4 {player.isPlaying ? "-translate-y-112" : ""}">
+<div style="rotate: {rotation}deg; z-index: {player.isPlaying ? "1" : "0"};" class="bg-yellow-50 p-4 float-right transition-transform duration-1000 shadow-md mt-120 -mb-292 -ml-4 {player.isPlaying ? "-translate-y-112" : ""}">
     <table class="bg-yellow-50 border-4">
         <tbody>
             <tr class="border-4">

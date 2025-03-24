@@ -3,6 +3,7 @@
 
     function onclick() {
         if (card.locked || card.cooldown) return
+        rotation = Math.random() * 2 - 1
         if (card.selected) {
             cardPile.cooldown = true
             card.flipping = true
@@ -14,6 +15,8 @@
         }
         setTimeout(() => (card.selected = false), 450)
     }
+
+    let rotation = $state(Math.random() * 2 - 1)
 </script>
 
 <style>
@@ -35,7 +38,7 @@
     }
 </style>
 
-<button {onclick} class="card {card.flipped ? "flipped" : ""} {card.flipping ? "scale-110" : ""} aspect-[287/400] h-56 -mb-60 transition-transform duration-300 shadow-md {card.locked || (!card.selected && cardPile.getselectedcardvalue()) != 0 ? "" : "cursor-pointer"} {card.selected ? "translate-y-80" : ""}">
+<button {onclick} style="rotate: {rotation}deg;" class="card {card.flipped ? "flipped" : ""} {card.flipping ? "scale-110" : ""} aspect-[287/400] h-56 -mb-60 transition-transform duration-300 shadow-md {card.locked || (!card.selected && cardPile.getselectedcardvalue()) != 0 ? "" : "cursor-pointer"} {card.selected ? "translate-y-80" : ""}">
     <img class="back transition-transform duration-300 w-[100%] h-[100%] -mb-56" src="card-back.png" alt={card.number}>
     <img class="front transition-transform duration-300 w-[100%] h-[100%]" src="{card.getcardimg()}" alt={card.number}>
 </button>
