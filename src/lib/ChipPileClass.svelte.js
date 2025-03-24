@@ -9,7 +9,7 @@ export class ChipPlieClass {
 
     resetchips() {
         for (let chip of this.chips) {
-            chip.visible = true
+            chip.resetchip()
         }
     }
 }
