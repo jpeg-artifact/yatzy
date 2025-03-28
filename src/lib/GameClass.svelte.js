@@ -15,7 +15,7 @@ export class GameClass {
         new PlayerClass()
         ])
 
-    turn = $state(30)
+    turn = $state(0)
     gameOver = $derived.by(() => {
         if (this.turn >= 15 * this.players.length + 1) {
             return true

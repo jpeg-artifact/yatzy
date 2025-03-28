@@ -297,12 +297,12 @@
                 <td> Ettor </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.ones.value == 0 &&
                         !player.ones.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : "" } font-hand"
                         onclick={onesclick}
                     >
                         {player.ones.display}
@@ -314,12 +314,12 @@
                 <td> Tvåor </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.twos.value == 0 &&
                         !player.twos.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={twosclick}
                     >
                         {player.twos.display}
@@ -331,12 +331,12 @@
                 <td> Treor </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.threes.value == 0 &&
                         !player.threes.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={threesclick}
                     >
                         {player.threes.display}
@@ -348,12 +348,12 @@
                 <td> Fyror </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.fours.value == 0 &&
                         !player.fours.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={foursclick}
                     >
                         {player.fours.display}
@@ -365,12 +365,12 @@
                 <td> Femmor </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.fives.value == 0 &&
                         !player.fives.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={fivesclick}
                     >
                         {player.fives.display}
@@ -382,12 +382,12 @@
                 <td> Sexor </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.sixes.value == 0 &&
                         !player.sixes.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={sixesclick}
                     >
                         {player.sixes.display}
@@ -401,7 +401,7 @@
                 <td>
                     <h1 class="text-1xl">SUMMA</h1>
                 </td>
-                <td>
+                <td class="font-hand">
                     {player.samesSum}
                 </td>
                 <td>
@@ -410,7 +410,7 @@
             </tr>
             <tr>
                 <td> Bonus </td>
-                <td>
+                <td class="font-hand">
                     {player.bonus}
                 </td>
                 <td>
@@ -421,12 +421,12 @@
                 <td> Ett par </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.onePair.value == 0 &&
                         !player.onePair.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={onepairclick}
                     >
                         {player.onePair.display}
@@ -438,12 +438,12 @@
                 <td> Två par </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.twoPair.value == 0 &&
                         !player.twoPair.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={twopairclick}
                     >
                         {player.twoPair.display}
@@ -455,12 +455,12 @@
                 <td> Tretal </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.threeOfAKind.value == 0 &&
                         !player.threeOfAKind.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={threeofakindclick}
                     >
                         {player.threeOfAKind.display}
@@ -472,12 +472,12 @@
                 <td> Fyrtal </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.fourOfAKind.value == 0 &&
                         !player.fourOfAKind.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={fourofakindclick}
                     >
                         {player.fourOfAKind.display}
@@ -489,12 +489,12 @@
                 <td> Kåk </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.fullHouse.value == 0 &&
                         !player.fullHouse.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={fullhouseclick}
                     >
                         {player.fullHouse.display}
@@ -506,12 +506,12 @@
                 <td> Liten stege </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.littleLadder.value == 0 &&
                         !player.littleLadder.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={littleladderclick}
                     >
                         {player.littleLadder.display}
@@ -523,12 +523,12 @@
                 <td> Stor stege </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.bigLadder.value == 0 &&
                         !player.bigLadder.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={bigladderclick}
                     >
                         {player.bigLadder.display}
@@ -540,12 +540,12 @@
                 <td> Chans </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.chans.value == 0 &&
                         !player.chans.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={chansclick}
                     >
                         {player.chans.display}
@@ -557,12 +557,12 @@
                 <td> Yatzy </td>
                 <td>
                     <button
-                        class={player.isPlaying &&
+                        class="{player.isPlaying &&
                         player.yatzy.value == 0 &&
                         !player.yatzy.crossed &&
                         !game.gameOver
                             ? "hover:bg-emerald-200 cursor-pointer"
-                            : ""}
+                            : ""} font-hand"
                         onclick={yatzyclick}
                     >
                         {player.yatzy.display}
@@ -576,7 +576,7 @@
                 <td>
                     <h1 class="text-1xl">SUMMA</h1>
                 </td>
-                <td>
+                <td class="font-hand">
                     {player.totalSum}
                 </td>
                 <td></td>
@@ -591,7 +591,7 @@
         border-width: 2px;
         padding: 1%;
         padding-left: 1%;
-        padding-right: 10%;
+        padding-right: 1%;
         width: 33%;
     }
     h1 {

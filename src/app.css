@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import 'tailwindcss';
+
+@theme{--font-hand:"Permanent Marker", "sans-serif"}
 
 body {
     background-image: url("/table.jpg");
