@@ -15,9 +15,9 @@ export class GameClass {
         new PlayerClass()
         ])
 
-    turn = $state(0)
+    turn = $state(30)
     gameOver = $derived.by(() => {
-        if (this.turn > 15 * this.players.length + 1) {
+        if (this.turn >= 15 * this.players.length + 1) {
             return true
         } else {
             return false
@@ -40,6 +40,9 @@ export class GameClass {
 
     resetgame() {
         this.turn = 0
+        for (let player of this.players) {
+            player.reset()
+        }
         this.nextturn()
     }
 

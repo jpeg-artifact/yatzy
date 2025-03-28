@@ -21,8 +21,8 @@
             </div>
         {/if}
         {#if game.gameOver}
-            <button onclick={resetonclick} class="border-4 opacity-50 border-emerald-900 rounded-2xl cursor-pointer">
-                <h1 class="font-bold text-4xl opacity-90 text-emerald-900">Starta om</h1>
+            <button onclick={resetonclick} class="border-4 border-white rounded-2xl cursor-pointer">
+                <h1 class="font-bold text-4xl text-white">Starta om</h1>
             </button>
         {/if}
         <div class="ml-auto mr-auto flex {game.gameOver ? "flex-row w-[100%] justify-center flex-wrap" : "flex-col w-[100%] sm:w-[35%]"}">
