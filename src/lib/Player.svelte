@@ -289,7 +289,7 @@
                     <h1 class="text-1xl">SPELARE</h1>
                 </td>
                 <td>
-                    <input type="text" />
+                    <input type="text" class="font-hand" />
                 </td>
                 <td></td>
             </tr>
