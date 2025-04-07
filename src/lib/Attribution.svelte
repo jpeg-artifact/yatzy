@@ -1,1 +1,1 @@
-<p class="fixed bottom-0 text-slate-200 z-2">Images designed by Freepik and PolyHaven</p>
+<div class="fixed bottom-0 text-slate-200 z-2">Images designed by <a href="https://www.freepik.com/">Freepik</a> and <a href="https://polyhaven.com/">PolyHaven</a></div>

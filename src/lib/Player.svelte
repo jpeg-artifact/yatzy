@@ -283,20 +283,24 @@
 
 <div style="rotate: {rotation}deg; z-index: {player.isPlaying ? "1" : "0"};" class="bg-yellow-50 p-4 transition-transform duration-1000 shadow-md {game.gameOver ? "" : "mt-116 -mb-292"} {player.isPlaying && !game.gameOver ? "-translate-y-112" : ""}">
     <table class="bg-yellow-50 border-4">
-        <tbody>
+        <caption class="hidden">Poäng tabell</caption>
+        <thead>
             <tr class="border-4">
-                <td>
+                <th>
                     <h1 class="text-1xl">SPELARE</h1>
-                </td>
-                <td>
-                    <input type="text" class="font-hand" />
-                </td>
-                <td></td>
+                </th>
+                <th>
+                    <input aria-label="Spelarnamn" type="text" class="font-hand" />
+                </th>
+                <th></th>
             </tr>
+        </thead>
+        <tbody>
             <tr>
                 <td> Ettor </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck ettor"
                         class="{player.isPlaying &&
                         player.ones.value == 0 &&
                         !player.ones.crossed &&
@@ -314,6 +318,7 @@
                 <td> Tvåor </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck tvåor"
                         class="{player.isPlaying &&
                         player.twos.value == 0 &&
                         !player.twos.crossed &&
@@ -331,6 +336,7 @@
                 <td> Treor </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck treor"
                         class="{player.isPlaying &&
                         player.threes.value == 0 &&
                         !player.threes.crossed &&
@@ -348,6 +354,7 @@
                 <td> Fyror </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck fyror"
                         class="{player.isPlaying &&
                         player.fours.value == 0 &&
                         !player.fours.crossed &&
@@ -365,6 +372,7 @@
                 <td> Femmor </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck femmor"
                         class="{player.isPlaying &&
                         player.fives.value == 0 &&
                         !player.fives.crossed &&
@@ -382,6 +390,7 @@
                 <td> Sexor </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck sexor"
                         class="{player.isPlaying &&
                         player.sixes.value == 0 &&
                         !player.sixes.crossed &&
@@ -421,6 +430,7 @@
                 <td> Ett par </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck ett par"
                         class="{player.isPlaying &&
                         player.onePair.value == 0 &&
                         !player.onePair.crossed &&
@@ -438,6 +448,7 @@
                 <td> Två par </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck två par"
                         class="{player.isPlaying &&
                         player.twoPair.value == 0 &&
                         !player.twoPair.crossed &&
@@ -455,6 +466,7 @@
                 <td> Tretal </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck tretal"
                         class="{player.isPlaying &&
                         player.threeOfAKind.value == 0 &&
                         !player.threeOfAKind.crossed &&
@@ -472,6 +484,7 @@
                 <td> Fyrtal </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck fyrtal"
                         class="{player.isPlaying &&
                         player.fourOfAKind.value == 0 &&
                         !player.fourOfAKind.crossed &&
@@ -489,6 +502,7 @@
                 <td> Kåk </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck kåk"
                         class="{player.isPlaying &&
                         player.fullHouse.value == 0 &&
                         !player.fullHouse.crossed &&
@@ -506,6 +520,7 @@
                 <td> Liten stege </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck liten stege"
                         class="{player.isPlaying &&
                         player.littleLadder.value == 0 &&
                         !player.littleLadder.crossed &&
@@ -523,6 +538,7 @@
                 <td> Stor stege </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck stor stege"
                         class="{player.isPlaying &&
                         player.bigLadder.value == 0 &&
                         !player.bigLadder.crossed &&
@@ -540,6 +556,7 @@
                 <td> Chans </td>
                 <td>
                     <button
+                        aria-label="Välj chans"
                         class="{player.isPlaying &&
                         player.chans.value == 0 &&
                         !player.chans.crossed &&
@@ -557,6 +574,7 @@
                 <td> Yatzy </td>
                 <td>
                     <button
+                        aria-label="Välj/stryck yatzy"
                         class="{player.isPlaying &&
                         player.yatzy.value == 0 &&
                         !player.yatzy.crossed &&
