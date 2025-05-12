@@ -33,4 +33,6 @@
     </div>
 </div>
 
+<img class="m-auto w-[50%] -mt-[35%] bg-blend-lighten -z-10" src="logo.png" alt="logo">
+
 <Attribution></Attribution>
